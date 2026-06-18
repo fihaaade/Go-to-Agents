@@ -2,11 +2,9 @@ class Go2agents < Formula
   desc "Dashboard for every Claude Code / Codex agent running on your machine"
   homepage "https://github.com/fihaaade/Go-to-Agents"
   license "MIT"
+  url "https://github.com/fihaaade/Go-to-Agents/archive/refs/tags/v0.1.0.tar.gz"
+  sha256 "eee455fd0d7a8f7854cf2cc8b3f10e8ed3aa869a41f5303477619dac571ad272"
   head "https://github.com/fihaaade/Go-to-Agents.git", branch: "main"
-
-  # For tagged releases, fill these in (sha256 of the release tarball):
-  # url "https://github.com/fihaaade/Go-to-Agents/archive/refs/tags/v0.1.0.tar.gz"
-  # sha256 "REPLACE_ME"
 
   depends_on "bun"
   depends_on "tmux"
