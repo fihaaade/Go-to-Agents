@@ -75,28 +75,30 @@ open -a SwiftBar                       # then pick ~/.swiftbar as the plugin fol
 
 ## Install
 
-### Homebrew (recommended)
-
-Pulls in `tmux` and `ripgrep` for you:
+### One line (recommended)
 
 ```bash
-brew install fihaaade/tap/go2agents
-# or, before a tagged release exists:
-brew install --HEAD fihaaade/tap/go2agents
+curl -fsSL https://raw.githubusercontent.com/fihaaade/Go-to-Agents/main/install.sh | bash
 ```
+
+The installer bootstraps [Bun](https://bun.sh) if needed, installs `tmux` + `ripgrep`
+(via Homebrew when available), clones into `~/.go2agents`, and puts `go2agents` (plus the
+short alias `gta`) in `~/.local/bin`. Re-run it anytime to update.
+
+> If a new shell can't find `go2agents`, add the bin dir to your PATH:
+> `export PATH="$HOME/.local/bin:$PATH"`. The `gta` alias may be shadowed by a shell alias
+> (e.g. `alias gta='git tag …'`) — prefer `go2agents`.
+
+Uninstall: `rm -rf ~/.go2agents ~/.local/bin/go2agents ~/.local/bin/gta`
 
 ### From source
 
 ```bash
 git clone https://github.com/fihaaade/Go-to-Agents
 cd Go-to-Agents
-bun install && bun link     # installs the `go2agents` command (short alias: `gta`)
+bun install && bun link     # installs `go2agents` (alias: `gta`)
 brew install tmux ripgrep   # runtime dependencies
 ```
-
-> If a new shell can't find `go2agents`, add Bun's bin dir to your PATH:
-> `export PATH="$HOME/.bun/bin:$PATH"`. The `gta` alias is also installed, but a shell
-> alias (e.g. `alias gta='git tag …'`) can shadow it — prefer `go2agents`.
 
 ## Commands
 
